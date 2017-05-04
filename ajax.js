@@ -73,4 +73,18 @@ $('#timebutton').on('click', function(){
   });
 });
 
+$('#carbutton').on('click', function(){
+  $.ajax({
+    url: 'http://first-ajax-api.herokuapp.com/a_car/',
+    method: 'GET',
+    dataType: 'html'
+  }).done(function (rdata) {
+    console.log('ajax query succeded');
+    $('#carlist').append(rdata);
+  }).fail(function() {
+    console.log('ajax query failed')
+    $('#step9').append('Ajax query 9 failed!');
+  });
+});
+
 });
