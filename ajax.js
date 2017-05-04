@@ -24,7 +24,7 @@ $('#ping').on('click', function(){
     console.log('ajax query failed')
     $('#step3456').append('Ajax query failed send help!');
   }).always(function(){
-    console.log('this message always happens with an ajax req!')
+    console.log('this message always happens with an ajax req!');
   });
 });
 
@@ -37,9 +37,10 @@ $('#pong').on('click', function(){
   }).done(function (rdata) {
     console.log('ajax query succeded');
     $('#step3456').append(rdata);
-  }).fail(function() {
-    console.log('ajax query failed')
-    $('#step3456').append('Ajax query failed send help!');
+  }).fail(function( jqXHR ) {
+    console.log('ajax query failed');
+    var hiddenMessage = $(jqXHR).attr('responseText');
+    $('#step3456').append(hiddenMessage);
   });
 });
 
