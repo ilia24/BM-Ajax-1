@@ -48,7 +48,7 @@ $('#count').on('click', function(){
   $.ajax({
     url: 'http://first-ajax-api.herokuapp.com/count/',
     method: 'GET',
-    // data: {},
+    data: {amount: 5},
     dataType: 'html'
   }).done(function (rdata) {
     console.log('ajax query succeded');
