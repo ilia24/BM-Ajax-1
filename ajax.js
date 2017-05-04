@@ -43,4 +43,23 @@ $('#pong').on('click', function(){
   });
 });
 
+$('#count').on('click', function(){
+  $.ajax({
+    url: 'http://first-ajax-api.herokuapp.com/count/',
+    method: 'GET',
+    // data: {},
+    dataType: 'html'
+  }).done(function (rdata) {
+    console.log('ajax query succeded');
+    $('#step7').append(rdata);
+  }).fail(function() {
+    console.log('ajax query failed')
+    $('#step7').append('Ajax query 7 failed send help!');
+  });
+});
+
+
+
+
+
 });
