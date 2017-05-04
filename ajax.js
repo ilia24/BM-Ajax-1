@@ -54,12 +54,23 @@ $('#count').on('click', function(){
     $('#step7').append(rdata);
   }).fail(function() {
     console.log('ajax query failed')
-    $('#step7').append('Ajax query 7 failed send help!');
+    $('#step7').append('Ajax query 7 failed!');
   });
 });
 
-
-
-
+$('#timebutton').on('click', function(){
+  $.ajax({
+    url: 'http://first-ajax-api.herokuapp.com/time/',
+    method: 'GET',
+    data: {timezone: 'Asia/Kolkata'},
+    dataType: 'html'
+  }).done(function (rdata) {
+    console.log('ajax query succeded');
+    $('#step8').append(rdata);
+  }).fail(function() {
+    console.log('ajax query failed')
+    $('#step8').append('Ajax query 8 failed!');
+  });
+});
 
 });
