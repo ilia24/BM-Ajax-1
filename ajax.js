@@ -6,7 +6,7 @@ $('#ajaxbutton').on('click', function(){
     url: 'http://first-ajax-api.herokuapp.com/',
     method: 'GET',
     // data: {},
-    // dataType: _____
+    dataType: 'html'
   });
 })
 
